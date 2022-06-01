@@ -8,7 +8,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 
 let camera, scene, renderer;
 let controls, water, sun;
-let camControls, temp; 
+let temp; 
 
 const loader = new GLTFLoader();
 
@@ -59,25 +59,8 @@ class Island{
   }
 }
 
-class Castle{
-  constructor(){
-    loader.load("assets/castle/scene.gltf", (gltf) => {
-      scene.add( gltf.scene )
-      gltf.scene.scale.set(0.5, 0.5,0.5)
-      gltf.scene.position.set(0,0,100)
-      
-
-      this.island = gltf.scene
-      this.speed = {
-        vel: 0,
-        rot: 0
-      }
-    })
-  }
-}
 const boat = new Boat()
 const island = new Island()
-//const castle = new Castle()
 
 async function loadModel(url){
   return new Promise((resolve, reject) => {
@@ -104,7 +87,7 @@ async function init() {
   camera.position.set( 30, 30, 200 );
  
   scene.add(camera);
-  sun = new THREE.Vector3();  
+  sun = new THREE.Vector3();
   
   // Water
 
@@ -238,7 +221,6 @@ function fitCameraToObject( camera, object, type ) {
   //camera.set(object.position);
   
 }
-
 
 function animate() {
   requestAnimationFrame( animate );  
