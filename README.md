@@ -1,5 +1,5 @@
 A sence of Ocean
-How to run:
+*How to run:
 - Clone repo
 - Open new terminal
 - Type: npm install
