@@ -205,15 +205,11 @@ function fitCameraToObject( camera, object, type ) {
   temp = new THREE.Vector3();
   temp.setFromMatrixPosition(object.matrixWorld);
   if(type == 1)
-    //camera.translateZ(-2);
-    camera.position.lerp(temp, 0.2);
+    camera.translateZ(-2);
+    //camera.position.lerp(temp, 0.2);
   if(type == 2)
-  camera.position.lerp(temp, 0.2);
-  if(type == 3)
-    //camera.translateZ(-2);
-  if(type == 4)
-    //camera.translateZ(-2);
-  //camera.position.lerp(temp, 0.2);
+  camera.position.lerp(temp, 0.2);    
+ 
   camera.lookAt(object.position);
   controls.target = object.position;
   
