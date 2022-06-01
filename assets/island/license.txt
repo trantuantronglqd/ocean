@@ -1,0 +1,11 @@
+Model Information:
+* title:	Olavinlinna - Olaf's Castle
+* source:	https://sketchfab.com/3d-models/olavinlinna-olafs-castle-7c5f6a4da3f24ce0b31443b9dd80d743
+* author:	Dystopia (https://sketchfab.com/Dystopia)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Olavinlinna - Olaf's Castle" (https://sketchfab.com/3d-models/olavinlinna-olafs-castle-7c5f6a4da3f24ce0b31443b9dd80d743) by Dystopia (https://sketchfab.com/Dystopia) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
