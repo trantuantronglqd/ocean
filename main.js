@@ -5,19 +5,12 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { Water } from 'three/examples/jsm/objects/Water.js';
 import { Sky } from 'three/examples/jsm/objects/Sky.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
-import {FirstPersonControls} from 'https://cdn.skypack.dev/three@0.136/examples/jsm/controls/FirstPersonControls.js';
-
 
 let camera, scene, renderer;
 let controls, water, sun;
-let camControls, temp;
- 
+let camControls, temp; 
 
 const loader = new GLTFLoader();
-
-function random(min, max) {
-  return Math.random() * (max - min) + min;
-}
 
 class Boat {
   constructor(){
@@ -58,8 +51,7 @@ class Island{
     loader.load("assets/island/scene.gltf", (gltf) => {
       scene.add( gltf.scene )
       gltf.scene.scale.set(30, 30, 30)
-      gltf.scene.position.set(-5,-3,-200)
-      
+      gltf.scene.position.set(-5,-3,-200)      
 
       this.island = gltf.scene
       
@@ -87,9 +79,6 @@ const boat = new Boat()
 const island = new Island()
 //const castle = new Castle()
 
-
-
-
 async function loadModel(url){
   return new Promise((resolve, reject) => {
     loader.load(url, (gltf) => {
@@ -100,7 +89,6 @@ async function loadModel(url){
 
 let boatModel = null
 
-
 init();
 animate();
 
@@ -109,16 +97,14 @@ async function init() {
   renderer.setPixelRatio( window.devicePixelRatio );
   renderer.setSize( window.innerWidth, window.innerHeight );
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  document.body.appendChild( renderer.domElement );
-  
+  document.body.appendChild( renderer.domElement );  
 
   scene = new THREE.Scene();  
   camera = new THREE.PerspectiveCamera( 55, window.innerWidth / window.innerHeight, 0.1, 20000 ); 
   camera.position.set( 30, 30, 200 );
  
   scene.add(camera);
-  sun = new THREE.Vector3();
-  
+  sun = new THREE.Vector3();  
   
   // Water
 
@@ -219,14 +205,10 @@ async function init() {
     
   })
   window.addEventListener( 'keyup', function(e){
-    boat.stop()
-    
-    //_thirdPersonCamera.Update(0.05)
+    boat.stop()    
   })  
   
 }
-
-
 
 function onWindowResize() {
 
@@ -235,10 +217,6 @@ function onWindowResize() {
   renderer.setSize( window.innerWidth, window.innerHeight );
   render()
 }
-
-
-
-
 
 function fitCameraToObject( camera, object, type ) {
   temp = new THREE.Vector3();
@@ -263,23 +241,15 @@ function fitCameraToObject( camera, object, type ) {
 
 
 function animate() {
-  requestAnimationFrame( animate );
-  
-  
+  requestAnimationFrame( animate );  
   controls.update();
   render();  
   boat.update()
-  
-  //checkCollisions()
-  
+    
 }
 
 function render() {
-  water.material.uniforms[ 'time' ].value += 1.0 / 60.0;
-  
-  
-  renderer.render( scene, camera );
-  
- 
+  water.material.uniforms[ 'time' ].value += 1.0 / 60.0;  
+  renderer.render( scene, camera ); 
 }
 
